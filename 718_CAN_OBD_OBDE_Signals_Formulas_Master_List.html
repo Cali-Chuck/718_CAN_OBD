@@ -247,6 +247,9 @@
   tbody tr:nth-child(odd) td.bus-tbc{ background:#fff; }
   tbody tr:nth-child(even) td.bus-tbc{ background:var(--stripe); }
   tbody tr:hover td.bus-tbc{ background:var(--stripe); }
+  tbody tr:nth-child(odd) td.bus-x{ background:#fff; }
+  tbody tr:nth-child(even) td.bus-x{ background:var(--stripe); }
+  tbody tr:hover td.bus-x{ background:var(--stripe); }
   .id-cell.basic{ color:var(--basic); }
   .id-cell.ext{ color:var(--ext); }
   .id-empty{ color:#9FA2A0; }
@@ -382,7 +385,7 @@ function idCell(val, cls, extraClass, thirdClass){
 
 function busCell(status){
   if(status === 'check') return `<td class="can-detail centered bus-check" data-col="can">&#10003;</td>`;
-  if(status === 'x') return `<td class="can-detail centered bus-x" data-col="can">&#10007;</td>`;
+  if(status === 'x') return `<td class="can-detail centered bus-x" data-col="can">X</td>`;
   if(status === 'tbc') return `<td class="can-detail centered bus-tbc" data-col="can"><em>tbc</em></td>`;
   return `<td class="id-empty can can-detail centered mono" data-col="can">—</td>`;
 }
