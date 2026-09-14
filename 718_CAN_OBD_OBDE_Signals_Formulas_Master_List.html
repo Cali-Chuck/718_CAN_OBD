@@ -241,9 +241,9 @@
   .id-cell.can{ color:var(--can); }
   .centered{ text-align:center; }
   th.bus-col{ max-width:3.2rem; white-space:normal; line-height:1.2; }
-  td.bus-check{ color:#1B8A5A; font-weight:700; }
-  td.bus-x{ color:#CC0000; font-weight:700; }
-  td.bus-tbc{ color:#8A6D00; font-style:italic; font-size:0.78rem; }
+  td.can-detail.bus-check{ color:#1B8A5A; font-weight:700; }
+  td.can-detail.bus-x{ color:#CC0000; font-weight:700; }
+  td.can-detail.bus-tbc{ color:#8A6D00; font-style:italic; font-size:0.78rem; }
   tbody tr:nth-child(odd) td.bus-tbc{ background:#fff; }
   tbody tr:nth-child(even) td.bus-tbc{ background:var(--stripe); }
   tbody tr:hover td.bus-tbc{ background:var(--stripe); }
@@ -385,7 +385,7 @@ function idCell(val, cls, extraClass, thirdClass){
 
 function busCell(status){
   if(status === 'check') return `<td class="can-detail centered bus-check" data-col="can">&#10003;</td>`;
-  if(status === 'x') return `<td class="can-detail centered bus-x" data-col="can">X</td>`;
+  if(status === 'x') return `<td class="can-detail centered bus-x" data-col="can">&#10007;</td>`;
   if(status === 'tbc') return `<td class="can-detail centered bus-tbc" data-col="can"><em>tbc</em></td>`;
   return `<td class="id-empty can can-detail centered mono" data-col="can">—</td>`;
 }
