@@ -128,7 +128,7 @@
   .intro-body img{ max-width:100%; height:auto; display:block; margin:1rem 0; border-radius:6px; }
   .intro-body figcaption{ font-size:0.8rem; color:var(--dim); font-style:italic; margin-top:-0.5rem; margin-bottom:1.1rem; }
 
-  .ref-table{ width:100%; border-collapse:collapse; font-size:0.85rem; margin:0.5rem 0 1.5rem; }
+  .ref-table{ width:auto; max-width:100%; border-collapse:collapse; font-size:0.85rem; margin:0.5rem auto 1.5rem; }
   .ref-table th{ text-align:left; font-weight:700; color:#fff; background:var(--can); padding:0.55rem 0.7rem; font-size:0.78rem; }
   .ref-table td{ padding:0.5rem 0.7rem; border-bottom:1px solid var(--line); vertical-align:top; }
   .ref-table tr:nth-child(even) td{ background:var(--stripe); }
@@ -196,7 +196,7 @@
   <details class="group intro-collapse">
     <summary><span class="caret"></span><h2>Driver #2 &ndash; Core Driver Data + Basic Engine Data</h2></summary>
     <div class="intro-body">
-      <p>In addition to the core driving data above, Driver #2 wants to keep an eye on engine health using via a simple OBD connection. A key use adding a light set of engine metrics is to understand the "normal" baseline values for things like key temperatures and pressures to spot problems before they become failures or codes. Another common use for such data is to be able to work backwards to possible root cause after a car throws a code on the track to help diagnose/debug a problem.</p>
+      <p>In addition to the core driving data above, Driver #2 wants to keep an eye on engine health using via a simple OBD connection. A key use case for adding a light set of engine metrics is to understand the "normal" baseline values for things like key temperatures and pressures to spot problems before they become failures or codes. Another common use for such data is to be able to work backwards to possible root cause after a car throws a code on the track to help diagnose/debug a problem.</p>
       <p>The following 6 signals apply to both turbo and NA engines and can be <strong>added to the "core" list above</strong> &ndash; not all of these are required or necessary, feel free to season to taste:</p>
       <table class="ref-table">
         <thead><tr><th>Signal Name</th><th>OBD Basic</th><th>OBD Extended &ndash; Flat 4</th></tr></thead>
