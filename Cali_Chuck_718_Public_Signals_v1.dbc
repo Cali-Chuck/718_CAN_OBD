@@ -1,0 +1,307 @@
+VERSION ""
+
+NS_ :
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Logger ECU
+
+BO_ 128 Engine_01: 8 ECU
+ SG_ MO_Torque_limit : 42|10@1+ (1,0) [0|1023] "Nm" Logger
+ SG_ MO_Torque_driver_request : 52|10@1+ (1,0) [0|1023] "Nm" Logger
+
+BO_ 129 Engine_02: 7 ECU
+ SG_ MO_Torque_target : 22|10@1+ (1,0) [0|1023] "Nm" Logger
+ SG_ MO_Torque_actual : 32|10@1+ (1,0) [0|1023] "Nm" Logger
+ SG_ MO_Gear_6MT : 49|4@1+ (1,0) [0|15] "#" Logger
+
+BO_ 134 LWI_01: 5 ECU
+ SG_ LWI_Steering_wheel_angle : 16|13@1+ (0.1,0) [0|819.1] "°" Logger
+ SG_ LWI_Steering_wheel_speed : 31|9@1+ (5,0) [0|2555] "°/sec" Logger
+
+BO_ 256 ESP_01: 8 ECU
+ SG_ ESP_ASR_intervention_1 : 57|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ ESP_EDL_intervention : 60|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ ESP_intervention_incl_TCS : 61|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ ESP_Vehicle_Speed_Raw : 32|16@1+ (0.01,0) [0|655.35] "km/h" Logger
+
+BO_ 257 ESP_02: 7 ECU
+ SG_ ESP_Lateral_acceleration : 16|8@1+ (0.01,-1.27) [-1.27|1.28] "G" Logger
+ SG_ ESP_Longitudinal_acceleration : 24|10@1+ (0.003187,-1.631546) [-1.631546|1.628346] "G" Logger
+ SG_ ESP_Yaw_rate : 40|14@1+ (0.01,0) [0|163.83] "°/sec" Logger
+ SG_ ESP_Vehicle_stationary_flag : 15|1@1+ (1,0) [0|1] "bool" Logger
+
+BO_ 258 Transmission_03: 8 ECU
+ SG_ GE_PDK_limp_mode_active : 62|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ GE_Gear_PDK : 24|4@1+ (1,0) [0|15] "#" Logger
+
+BO_ 259 ESP_03: 8 ECU
+ SG_ ESP_Wheel_Speed_FL : 16|12@1+ (0.103,0) [0|421.785] "km/h" Logger
+ SG_ ESP_Wheel_Speed_FR : 28|12@1+ (0.103,0) [0|421.785] "km/h" Logger
+ SG_ ESP_Wheel_Speed_RL : 40|12@1+ (0.103,0) [0|421.785] "km/h" Logger
+ SG_ ESP_Wheel_Speed_RR : 52|12@1+ (0.103,0) [0|421.785] "km/h" Logger
+
+BO_ 260 EPB_01: 8 ECU
+ SG_ EPB_Electronic_parking_brake_state : 61|2@1+ (1,0) [0|3] "bool" Logger
+ SG_ EPB_Clutch_position_6MT : 32|8@1+ (0.4,-10) [-10|92] "%" Logger
+
+BO_ 261 Engine_03: 7 ECU
+ SG_ MO_Accelerator_pedal_position : 48|8@1+ (0.4,0) [0|102] "%" Logger
+ SG_ MO_Rear_brake_light_state : 34|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ MO_Engine_Speed_Raw : 16|16@1+ (0.25,0) [0|16383.75] "RPM" Logger
+ SG_ MO_Engine_running_flag : 39|1@1+ (1,0) [0|1] "bool" Logger
+
+BO_ 262 ESP_05: 4 ECU
+ SG_ ESP_Brake_pressure : 16|10@1+ (0.3,-30) [-30|276.9] "Bar" Logger
+
+BO_ 263 Engine_04: 6 ECU
+ SG_ MO_Boost_pressure_actual : 39|9@1+ (0.01,0) [0|5.11] "Bar" Logger
+ SG_ MO_Engine_Speed_Smoothed : 24|12@1+ (3,0) [0|12285] "RPM" Logger
+ SG_ MO_Engine_oil_pressure : 16|8@1+ (0.04,0) [0|10.2] "Bar" Logger
+
+BO_ 267 LS_01: 3 ECU
+ SG_ LS_Paddle_shift_left_state : 22|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ LS_Paddle_shift_right_state : 23|1@1+ (1,0) [0|1] "bool" Logger
+
+BO_ 273 TSK_05: 6 ECU
+ SG_ TSK_Vertical_gradient : 40|8@1+ (0.8,-101.6) [-101.6|102.4] "%" Logger
+
+BO_ 276 Engine_10: 5 ECU
+ SG_ MO_Brake_vacuum : 32|8@1+ (4,0) [0|1020] "hPa" Logger
+ SG_ MO_Manifold_vacuum_pressure_measured : 25|6@1+ (18,0) [0|1134] "mbar" Logger
+
+BO_ 307 SelectorLever: 2 ECU
+ SG_ SL_Tiptronic_lever_down_state : 8|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ SL_Tiptronic_lever_upshift_state : 9|1@1+ (1,0) [0|1] "bool" Logger
+
+BO_ 776 ESP_04: 4 ECU
+ SG_ ESP_PSM_intervention_lamp : 4|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ ESP_ABS_intervention_lamp_1 : 5|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ ESP_disabled_lamp : 15|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ ESP_ASR_intervention_lamp_2 : 31|1@1+ (1,0) [0|1] "bool" Logger
+
+BO_ 779 InstrumentCluster_01: 8 ECU
+ SG_ IC_Oil_pressure_warning_1 : 22|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ IC_Vehicle_Speed_Smoothed : 48|10@1+ (0.32,0) [0|327.36] "km/h" Logger
+ SG_ IC_ABS_lamp_state_2 : 0|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ IC_Low_fuel_lamp_state : 16|1@1+ (1,0) [0|1] "bool" Logger
+
+BO_ 782 Engine_05: 5 ECU
+ SG_ MO_RPM_limiter_active : 33|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ MO_Speed_limiter_active : 35|1@1+ (1,0) [0|1] "bool" Logger
+
+BO_ 899 MSG_383: 1 ECU
+ SG_ Sport_Chrono_mode : 4|4@1+ (1,0) [0|15] "#" Logger
+
+BO_ 913 OBD_01: 5 ECU
+ SG_ OBD_Throttle_plate_angle_actual : 16|8@1+ (0.392157,0) [0|100.000035] "%" Logger
+ SG_ OBD_Engine_load_calculated : 0|8@1+ (0.392157,0) [0|100.000035] "%" Logger
+ SG_ OBD_Engine_load_absolute : 24|16@1+ (0.392157,0) [0|25700.008995] "%" Logger
+
+BO_ 933 MSG_3A5: 8 ECU
+ SG_ Engine_compartment_temperature : 48|6@1+ (3,-48) [-48|141] "°C" Logger
+ SG_ Sport_exhaust_flap_state : 46|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ PDK_gearbox_temperature_CAN : 56|8@1+ (1,-60) [-60|195] "°C" Logger
+
+BO_ 1088 Engine_06: 8 ECU
+ SG_ MO_Radiator_fan_duty_cycle : 1|7@1+ (1,0) [0|127] "%" Logger
+ SG_ MO_Engine_oil_quantity_display : 16|4@1+ (12.5,0) [0|187.5] "%" Logger
+ SG_ MO_Engine_oil_quantity : 43|5@1+ (125,0) [0|3875] "mL" Logger
+ SG_ MO_Oil_pressure_warning_2_Priority_1 : 60|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ MO_Oil_below_minimum_warning : 13|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ MO_Oil_level_below_minimum : 56|1@1+ (1,0) [0|1] "bool" Logger
+
+BO_ 1089 Transmission_04: 8 ECU
+ SG_ GE_MIL_lamp_status : 10|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ GE_fluid_temperature : 56|8@1+ (1,-58) [-58|197] "°C" Logger
+
+BO_ 1600 Engine_07: 4 ECU
+ SG_ MO_Engine_oil_temperature : 16|8@1+ (1,-60) [-60|195] "°C" Logger
+ SG_ MO_Intake_air_temperature : 8|8@1+ (0.75,-48) [-48|143.25] "°C" Logger
+ SG_ MO_Coolant_temperature : 24|8@1+ (0.75,-48) [-48|143.25] "°C" Logger
+
+BO_ 1604 Gateway_11: 3 ECU
+ SG_ GW_Turn_blinker_state_left : 16|1@1+ (1,0) [0|1] "bool" Logger
+ SG_ GW_Turn_blinker_state_right : 17|1@1+ (1,0) [0|1] "bool" Logger
+
+BO_ 1651 TirePressure: 4 ECU
+ SG_ TP_Tire_pressure_FL : 0|6@1+ (10,0) [0|630] "kPa" Logger
+ SG_ TP_Tire_pressure_FR : 8|6@1+ (10,0) [0|630] "kPa" Logger
+ SG_ TP_Tire_pressure_RL : 16|6@1+ (10,0) [0|630] "kPa" Logger
+ SG_ TP_Tire_pressure_RR : 24|6@1+ (10,0) [0|630] "kPa" Logger
+
+BO_ 1714 Diagnostics_01: 8 ECU
+ SG_ Diag_Odometer : 8|20@1+ (1,0) [0|1048575] "km" Logger
+ SG_ Diag_Clock_Hour : 44|5@1+ (1,0) [0|31] "hr" Logger
+ SG_ Diag_Clock_Minute : 49|6@1+ (1,0) [0|63] "min" Logger
+ SG_ Diag_Clock_Second : 55|6@1+ (1,0) [0|63] "sec" Logger
+
+BO_ 1719 InstrumentCluster_02: 8 ECU
+ SG_ IC_Ambient_air_temperature : 56|8@1+ (0.5,-50) [-50|77.5] "°C" Logger
+ SG_ IC_Fuel_level_measured_L : 40|7@1+ (1,0) [0|127] "L" Logger
+
+CM_ SG_ 128 MO_Torque_limit "Torque - limit — Attention: Unitless CAN value. Factor in MO Factor Moments in Engine Code 01 Interior Maximum possible torque at a speed (e.g. smoke Control or error case)";
+CM_ SG_ 128 MO_Torque_driver_request "Torque - driver request — Attention: Unitless CAN value. Factor in MO Factor Moments in Engine Code 01 Torque in Front of filter, usable for train/thrust detection during transmission (identical to internal torque without external intervention in Diesel)";
+CM_ SG_ 129 MO_Torque_target "Torque - target — Attention: Unitless CAN value. Factor in MO Factor Moments in Engine Code 01 Target torque without P and D component of the idle regulator, without anti-bucking function and without transmission intervention";
+CM_ SG_ 129 MO_Torque_actual "Torque - actual — Attention: Unitless CAN value. Factor in MO Factor Moments in Engine Code 01 Actual torque without P and D component of the idle regulator, without anti-bucking function and without transmission intervention";
+CM_ SG_ 129 MO_Gear_6MT "Gear (6MT) — MLB: Position of the selector lever in the shift gate of the manual transmission. MLBevo: extension of operation also to automatic transmissions, routing of the Signal GE drive level: 1st Position R (dec. 6) to MO gear Position: Gear R (dec. 13) due to omission of signa";
+CM_ SG_ 134 LWI_Steering_wheel_angle "Steering wheel angle — Value range = +/- 800 degrees resolution = 0.1 degrees ATTENTION: specified internal resolution of the Sensor is only 0.5 degrees increment! Grade: MLB: Note additional angle in dynamic steering! MQB: Non-constant steering gear";
+CM_ SG_ 134 LWI_Steering_wheel_speed "Steering wheel speed — Value range = +/- 2500 degrees/s Resolution = 5 degrees/s grade: In addition, observe angles for dynamic steering !";
+CM_ SG_ 256 ESP_ASR_intervention_1 "ASR intervention #1 — MLB: The torque Request 'ASR MSR Torque fast' and 'ASR Torque slow' shall be executed MQB: The torque Request 'BR intervention torque' Actual";
+CM_ SG_ 256 ESP_EDL_intervention "EDL intervention — Electronic differential lock";
+CM_ SG_ 256 ESP_intervention_incl_TCS "ESP intervention (incl. TCS) — Operation of the stability controller";
+CM_ SG_ 256 ESP_Vehicle_Speed_Raw "Vehicle Speed (Raw) — Speed Signal from ABS/ASR or ESP. Average value of the driven wheels. In the case of MSR or ABS interventions, the ABS reference speed For >= 200 ms is mirrored (Time is triggered with active edge of the function bits) MQB: In the case of frontantry";
+CM_ SG_ 257 ESP_Lateral_acceleration "Lateral acceleration — Acceleration value in y-axle MLB: measured value 0xFF = error (as already specified in the value range) In the case of ESP shutdown by model-based monitoring, the Signal is still output. In the AU64x and AU57x, the commission of the";
+CM_ SG_ 257 ESP_Longitudinal_acceleration "Longitudinal acceleration — Acceleration value in x-axle MLB: In the AU64x and AU57x, the commission of the Sensor values is made by SARA-SG! In the AU64x and AU57x, the Signal is still output during ESP shutdown by model-supported monitoring. MQB: Sensor raw value longitudinal b";
+CM_ SG_ 257 ESP_Yaw_rate "Yaw rate — Angular velocity around the z-axle, ESP VZ YawRate & ESP QBit YawRate note!!! MLB: measured value actual resolution Bosch ESP: 0.27 degrees/s From AU64x resolution as the actual scaling 0.01. In the AU64x and AU57x, at ESP";
+CM_ SG_ 257 ESP_Vehicle_stationary_flag "Vehicle stationary flag — In RB projects, the standstill flag set is set when the absolute standstill of the wheel speed sensors has been detected, i.e. no tooth moves anymore. This Bit is used for example in the MOST For TV tuner shutdown Australia, i.e. slight vibration";
+CM_ SG_ 258 GE_PDK_limp_mode_active "PDK limp mode active — AL/DL: Signals when the transmission (in the case of DL On partial transmission) is in the LimpMode. VL: Will set if no adhesion is possible Actual.";
+CM_ SG_ 258 GE_Gear_PDK "Gear (PDK) — VL transmission: Signals the target gear in manual Mode during a shifting operation, i.e. the instantaneous simulated gear if no shifting operation Active Actual. In the driving programs 'D' and 'S' Actual the translation is variable and thus permanently 'Actual";
+CM_ SG_ 259 ESP_Wheel_Speed_FL "Wheel Speed FL — Wheelspeed Front left";
+CM_ SG_ 259 ESP_Wheel_Speed_FR "Wheel Speed FR — WheelSpeed Front Right";
+CM_ SG_ 259 ESP_Wheel_Speed_RL "Wheel Speed RL — WheelSpeed Rear Left";
+CM_ SG_ 259 ESP_Wheel_Speed_RR "Wheel Speed RR — WheelSpeed Rear Right";
+CM_ SG_ 260 EPB_Electronic_parking_brake_state "Electronic parking brake state — Indicates the state of the EPB actuators. VW526/PAG E2 only: Value 0x3 means 'unknown";
+CM_ SG_ 260 EPB_Clutch_position_6MT "Clutch position (6MT) — The Signal corresponds to the duty factor of the PWM. Total path coupling pedal 10% to 90%, therefore expected values 25 to 225. 25 not stepped in the case of a clutch pedal, and 225 fully penetrated in the case of a clutch pedal. 2% tolerance is allowed in the value range (8%-92%).";
+CM_ SG_ 261 MO_Accelerator_pedal_position "Accelerator pedal position — AUDI D4: Cycle time: 10 ms (Sea cycle time fast/Cycletime Fast) Position of the accelerator pedal (RawValue, without superposition by GRA interventions, etc.) The functions for calculating the gas pedal raw value run in the 10 ms grid. The accelerator pedal value calculated";
+CM_ SG_ 261 MO_Rear_brake_light_state "Rear brake light state — Unfiltered raw Signal of the brake light switch, only when HW input is equipped and evaluated. For motors without a used HW input, no SubstituteValue (e.g. SW Signal via CAN) is output! In the case of AUDI, the Signal wg Stop light function must always be";
+CM_ SG_ 261 MO_Engine_Speed_Raw "Engine Speed (Raw) — In the event of a Fault, the Engine speed is output as a substitute variable via the camshaft speed.";
+CM_ SG_ 261 MO_Engine_running_flag "Engine running flag — The Engine Control unit provides the information Off as to when the Engine is running self-sufficiently due to combustion and is mechanically loadable Actual (e.g., by Generator, air conditioning compressor, etc.). The 'Engine running' information is output";
+CM_ SG_ 262 ESP_Brake_pressure "Brake pressure — RawValue of brake pressure [advance pressure by driver input (Pvor)]. With active pressure build-up (stabilization interventions) no Pvor";
+CM_ SG_ 263 MO_Boost_pressure_actual "Boost pressure (actual) — Absolute BoostPressure";
+CM_ SG_ 263 MO_Engine_Speed_Smoothed "Engine Speed (Smoothed) — Optimized display speed due to sportier speed meters in the InstrumentCluster. Parallel hybrid: VKM-Speed To display concept";
+CM_ SG_ 263 MO_Engine_oil_pressure "Engine oil pressure — Oil pressure analogous to display";
+CM_ SG_ 267 LS_Paddle_shift_left_state "Paddle shift left state — MFL-Tiptronic keys from MFL For Transmission 0x0 = no Tip Down 0x1 = Tip Down";
+CM_ SG_ 267 LS_Paddle_shift_right_state "Paddle shift right state — MFL-Tiptronic keys from MFL For Transmission 0x0 = no Tip Up 0x1 = Tip Up";
+CM_ SG_ 273 TSK_Vertical_gradient "Vertical gradient — gradient in % mountain. The Signal is used to adjust the target acceleration from ACC Positive Values > uphill, Negative Values < downhill error: the slope due to an error (with KD-ErrorEntry) CAN no longer be calculated";
+CM_ SG_ 276 MO_Brake_vacuum "Brake vacuum — The Maximum value is limited to 1012 mbar";
+CM_ SG_ 276 MO_Manifold_vacuum_pressure_measured "Manifold vacuum pressure (measured) — The value indicates by how much mbar the intake manifold pressure is below the ambient pressure. Overpressure in the intake pipe is not emitted. Intake manifold pressure=ambient pressure";
+CM_ SG_ 307 SL_Tiptronic_lever_down_state "Tiptronic lever down state";
+CM_ SG_ 307 SL_Tiptronic_lever_upshift_state "Tiptronic lever upshift state";
+CM_ SG_ 776 ESP_PSM_intervention_lamp "PSM intervention lamp — State of the stability Control lamp (MLB: ASR and/or ESP, MQB: ESP only) Further information to be specified in the specification and requested in the relevant department.";
+CM_ SG_ 776 ESP_ABS_intervention_lamp_1 "ABS intervention lamp #1 — Safety warning lamp Further information specified in the specification and to be requested in the appropriate specialist department.";
+CM_ SG_ 776 ESP_disabled_lamp "ESP disabled lamp — Bit for controlling the separate ESP-off lamp in the InstrumentCluster (legal requirement USA) MLB: use/operation from D4";
+CM_ SG_ 776 ESP_ASR_intervention_lamp_2 "ASR intervention lamp #2 — Signal is used only in B8/Q5 to represent the error state of the ESP. In all successive projects, the old Signals are used for this function and this Signal Actual Invalid. ESP ASR Lamp == 0 no stabilization intervention, no Fe";
+CM_ SG_ 779 IC_Oil_pressure_warning_1 "Oil pressure warning #1 — Oil pressure warning in the InstrumentCluster Active";
+CM_ SG_ 779 IC_Vehicle_Speed_Smoothed "Vehicle Speed (Smoothed) — Speed displayed in the speedometer including the haste";
+CM_ SG_ 779 IC_ABS_lamp_state_2 "ABS lamp state #2 — ABS safety lamp was switched on.";
+CM_ SG_ 779 IC_Low_fuel_lamp_state "Low fuel lamp state — The driver is warned that he has reached the reserve area. Vehicle specific warning threshold";
+CM_ SG_ 782 MO_RPM_limiter_active "RPM limiter active — Priority Bit of the Engine desired speed as Max";
+CM_ SG_ 782 MO_Speed_limiter_active "Speed limiter active — Engine limits current vehicle speed, responding to external or internal Request";
+CM_ SG_ 899 Sport_Chrono_mode "Sport Chrono mode";
+CM_ SG_ 913 OBD_Throttle_plate_angle_actual "Throttle plate angle (actual) — Absolute Throttle Position Transmission From measurable variables to the transmission Control unit For Freeze Frame storage in case of transmission errors PID $11 Absolute Throttle Position, 0 .. 100% with 100/255 %/Bit";
+CM_ SG_ 913 OBD_Engine_load_calculated "Engine load (calculated) — Calculated Load Value Transmission From measurable variables to the transmission Control device For Freeze Frame Storage in case of transmission errors PID $04 Calculated Load Value, 0 .. 100% with 100/255 % per Bit";
+CM_ SG_ 913 OBD_Engine_load_absolute "Engine load (absolute) — Absolute Load Value Transmission From Measurements to the Transmission Control Unit For Freeze Frame Storage in case of transmission errors PID $43 Absolute Load Value, 0 ..25700% with 100/255 %/Bit";
+CM_ SG_ 933 Engine_compartment_temperature "Engine compartment temperature";
+CM_ SG_ 933 Sport_exhaust_flap_state "Sport exhaust flap state";
+CM_ SG_ 933 PDK_gearbox_temperature_CAN "PDK gearbox temperature (CAN) Confirmed via official Panamera DBC as "Oil_Temperature_Wheelset" at the same bit/scale/offset (same message, bit56) — likely a rough translation of the German for gear train.";
+CM_ SG_ 1088 MO_Radiator_fan_duty_cycle "Radiator fan duty cycle";
+CM_ SG_ 1088 MO_Engine_oil_quantity_display "Engine oil quantity (display) — 8 segments to indicate the oil level bars";
+CM_ SG_ 1088 MO_Engine_oil_quantity "Engine oil quantity — Oil quantity between Min and Max";
+CM_ SG_ 1088 MO_Oil_pressure_warning_2_Priority_1 "Oil pressure warning #2 (Priority 1) — In the InstrumentCluster, the red Prio1 oil pressure warning (including 3xBeep) Off. MLB only: the warning is triggered only when the WIV Enable Oeldr Engine is set simultaneously";
+CM_ SG_ 1088 MO_Oil_below_minimum_warning "Oil below minimum warning — Signal indicates when the oil level has fallen below the Min-threshold";
+CM_ SG_ 1088 MO_Oil_level_below_minimum "Oil level below minimum — Oil level has fallen below the underfill threshold";
+CM_ SG_ 1089 GE_MIL_lamp_status "MIL lamp status — This Bit controls the MIL lamp (Engine Control unit passes this information on to InstrumentCluster).";
+CM_ SG_ 1089 GE_fluid_temperature "Transmission fluid temperature — Transmission sump temperature is determined via the temperature Sensor on the transmission board. The absolute sump temperature is received by the Engine in order to set corresponding cooling power For the transmission.";
+CM_ SG_ 1600 MO_Engine_oil_temperature "Engine oil temperature — Real measuring range about -40..150 degrees";
+CM_ SG_ 1600 MO_Intake_air_temperature "Intake air temperature — In vehicles without outside temperature from the InstrumentCluster, Off the intake air temperature CAN be inferred from the outside temperature. With the SDI Actual this is given with a certain accuracy. It is used by the ASG.";
+CM_ SG_ 1600 MO_Coolant_temperature "Coolant temperature — Coolant temperature";
+CM_ SG_ 1604 GW_Turn_blinker_state_left "Turn blinker state - left — Direction left";
+CM_ SG_ 1604 GW_Turn_blinker_state_right "Turn blinker state - right — Direction Right";
+CM_ SG_ 1651 TP_Tire_pressure_FL "Tire pressure FL";
+CM_ SG_ 1651 TP_Tire_pressure_FR "Tire pressure FR";
+CM_ SG_ 1651 TP_Tire_pressure_RL "Tire pressure RL";
+CM_ SG_ 1651 TP_Tire_pressure_RR "Tire pressure RR";
+CM_ SG_ 1714 Diag_Odometer "Error is output if odometer cannot be restored";
+CM_ SG_ 1714 Diag_Clock_Hour "Clock (Hour) — 0x18 - 0x1F = Values Invalid";
+CM_ SG_ 1714 Diag_Clock_Minute "Clock (Minute) — 0x3C- 0x3f = Values Invalid";
+CM_ SG_ 1714 Diag_Clock_Second "Clock (Second) — 0x3C- 0x3f = Values Invalid";
+CM_ SG_ 1719 IC_Ambient_air_temperature "Ambient air temperature";
+CM_ SG_ 1719 IC_Fuel_level_measured_L "Fuel level (measured L) — Remaining quantity 2 or 2.5l not resolvable 0x7F = error";
+
+VAL_ 128 MO_Torque_limit 1022 "Init" 1023 "Error" ;
+VAL_ 128 MO_Torque_driver_request 1022 "Init" 1023 "Error" ;
+VAL_ 129 MO_Torque_target 1022 "Init" 1023 "Error" ;
+VAL_ 129 MO_Torque_actual 1022 "Init" 1023 "Error" ;
+VAL_ 129 MO_Gear_6MT 0 "Gear_N" 1 "Gear_1" 2 "Gear_2" 3 "Gear_3" 4 "Gear_4" 5 "Gear_5" 6 "Gear_6" 7 "Gear_7" 8 "Gear_8" 10 "Automatic Forward S" 11 "Automatic Forward D/E" 12 "Intermediate Position" 13 "Gear_R" 14 "Current not defined" 15 "Error" ;
+VAL_ 134 LWI_Steering_wheel_angle 8190 "Init" 8191 "Error" ;
+VAL_ 134 LWI_Steering_wheel_speed 510 "Init" 511 "Error" ;
+VAL_ 256 ESP_ASR_intervention_1 0 "No_Request" 1 "ASR_Request" ;
+VAL_ 256 ESP_EDL_intervention 0 "No EDS Interference" 1 "EDS intervention" ;
+VAL_ 256 ESP_intervention_incl_TCS 0 "No ESP Interference" 1 "ESP_Intervention_Active" ;
+VAL_ 256 ESP_Vehicle_Speed_Raw 65533 "Low voltage" 65534 "Init" 65535 "Error" ;
+VAL_ 257 ESP_Lateral_acceleration 255 "Error" ;
+VAL_ 257 ESP_Longitudinal_acceleration 1022 "Signal not present" 1023 "Error" ;
+VAL_ 257 ESP_Yaw_rate 16383 "Error" ;
+VAL_ 257 ESP_Vehicle_stationary_flag 0 "no standstill recognized" 1 "Standstill Recognised" ;
+VAL_ 258 GE_PDK_limp_mode_active 0 "No LimpMode / Init" 1 "Transmission in LimpMode" ;
+VAL_ 258 GE_Gear_PDK 0 "Gear P/N" 1 "Gear 1" 2 "Gear 2" 3 "Gear 3" 4 "Gear 4" 5 "Gear 5" 6 "Gear 6" 7 "Gear 7" 8 "Gear R" 11 "Gear 8" 12 "Gear 9" 14 "Actual gear not defined" 15 "Error" ;
+VAL_ 259 ESP_Wheel_Speed_FL 4093 "Low voltage" 4094 "Init" 4095 "Error" ;
+VAL_ 259 ESP_Wheel_Speed_FR 4093 "Low voltage" 4094 "Init" 4095 "Error" ;
+VAL_ 259 ESP_Wheel_Speed_RL 4093 "Low voltage" 4094 "Init" 4095 "Error" ;
+VAL_ 259 ESP_Wheel_Speed_RR 4093 "Low voltage" 4094 "Init" 4095 "Error" ;
+VAL_ 260 EPB_Electronic_parking_brake_state 0 "Open" 1 "Brake_Closed_(Clamping_Force_Full/Reduced)" 2 "Actuator_Running" 3 "Error_or_Unknown" ;
+VAL_ 260 EPB_Clutch_position_6MT 0 "Init" 255 "Error" ;
+VAL_ 261 MO_Accelerator_pedal_position 255 "Error" ;
+VAL_ 261 MO_Rear_brake_light_state 0 "No brakes" 1 "Brake_Applied" ;
+VAL_ 261 MO_Engine_Speed_Raw 65535 "Error" ;
+VAL_ 261 MO_Engine_running_flag 0 "Engine_Not_Running" 1 "Engine_Running_SelfSufficiently_And_Stable_And_May_Be_Mechanically_Loaded" ;
+VAL_ 262 ESP_Brake_pressure 1023 "Error" ;
+VAL_ 263 MO_Boost_pressure_actual 511 "Error" ;
+VAL_ 263 MO_Engine_Speed_Smoothed 4095 "Error" ;
+VAL_ 263 MO_Engine_oil_pressure 254 "Init" 255 "Error" ;
+VAL_ 267 LS_Paddle_shift_left_state 0 "Not activated" 1 "Activities" ;
+VAL_ 267 LS_Paddle_shift_right_state 0 "Not activated" 1 "Activities" ;
+VAL_ 273 TSK_Vertical_gradient 255 "Error" ;
+VAL_ 276 MO_Brake_vacuum 254 "Init" 255 "Error" ;
+VAL_ 276 MO_Manifold_vacuum_pressure_measured 0 "Init Overprint" 63 "Error" ;
+VAL_ 776 ESP_PSM_intervention_lamp 0 "Off" 1 "On" ;
+VAL_ 776 ESP_ABS_intervention_lamp_1 0 "Off" 1 "On" ;
+VAL_ 776 ESP_disabled_lamp 0 "Lamp_Off" 1 "Lamp_On" ;
+VAL_ 776 ESP_ASR_intervention_lamp_2 0 "ESP_ASR_Lamp_Off" 1 "ESP ASR Lamp On" ;
+VAL_ 779 IC_Oil_pressure_warning_1 0 "Inactive" 1 "Active" ;
+VAL_ 779 IC_ABS_lamp_state_2 0 "ABS Lamp Off" 1 "ABS Lamp On" ;
+VAL_ 779 IC_Low_fuel_lamp_state 0 "Lamp Off" 1 "Lamp On" ;
+VAL_ 782 MO_RPM_limiter_active 0 "Wish" 1 "Obligation" ;
+VAL_ 782 MO_Speed_limiter_active 0 "Inactive" 1 "Active" ;
+VAL_ 1088 MO_Oil_pressure_warning_2_Priority_1 0 "No_Warning" 1 "low oil pressure level not reached" ;
+VAL_ 1088 MO_Oil_below_minimum_warning 0 "OK" 1 "Warning" ;
+VAL_ 1088 MO_Oil_level_below_minimum 0 "OK" 1 "Sub-warning" ;
+VAL_ 1089 GE_MIL_lamp_status 0 "MIL Off" 1 "MIL On" ;
+VAL_ 1089 GE_fluid_temperature 255 "Error" ;
+VAL_ 1600 MO_Engine_oil_temperature 253 "Not installed" 254 "Init" 255 "Error" ;
+VAL_ 1600 MO_Intake_air_temperature 254 "Init" 255 "Error" ;
+VAL_ 1600 MO_Coolant_temperature 254 "Init" 255 "Error" ;
+VAL_ 1604 GW_Turn_blinker_state_left 0 "Not activated" 1 "Turn_Signal_Lever_Left_Activated" ;
+VAL_ 1604 GW_Turn_blinker_state_right 0 "Not activated" 1 "Turn_Signal_Lever_Right_Activated" ;
+VAL_ 1714 Diag_Odometer 1048574 "Init" 1048575 "Error" ;
+VAL_ 1719 IC_Ambient_air_temperature 253 "Not installed" 254 "Init" 255 "Error" ;
+VAL_ 1719 IC_Fuel_level_measured_L 127 "Error" ;
