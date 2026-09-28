@@ -8,7 +8,7 @@ hardwired in-car telemetry systems from VBox, Aim, RaceNavigator and others can 
 
 THE REPO IS NOT INTENDED TO BE PUBLICLY MODIFIABLE AT THIS TIME.
 
-PLEASE DIRECT ADDITIONS OR PROPOSED CORRECTIONS TO xxx
+PLEASE DIRECT ADDITIONS OR PROPOSED CORRECTIONS TO @CALI_CHUCK ON 718FORUM.COM.
 
 As of the last update (2026-09-28) the site consists of these pages:
 
